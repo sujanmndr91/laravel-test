@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +17,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('posts.create');
 });
+
+// Registration
+Route::get('/register', 'RegisterController@index');
+Route::post('/register', 'RegisterController@store');
+
+// Login
+Route::get('/login', 'LoginController@index');
+Route::post('/login', 'LoginController@store');
+
+
+
+// View posts
+Route::get('/posts', 'PostController@index');
+Route::post('/post', 'PostController@store');
