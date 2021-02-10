@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<form method="POST" action="/register" class="form-control">
+<div class="container">
+      <div class="justify-content-center">
+      <form method="POST" action="/register" class="form-control">
      {{ @csrf_field() }}
 
      <div class="form-group">
@@ -44,4 +46,8 @@
      </div>
      <input type="submit" class="" value="Register">
 </form>
+      
+      </div>
+</div>
+
 @endsection

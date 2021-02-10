@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-@if (session('status'))
+<div class="container">
+      <div class="justify-content-center">
+      @if (session('status'))
       <div class="text-red">
             {{ session('status') }}
       </div>
-@endif
+      @endif
 
 
 <form method="POST" action="/login" class="form-control">
@@ -33,4 +35,8 @@
 
      <input type="submit" class="" value="Login">
 </form>
+      
+      </div>
+</div>
+
 @endsection

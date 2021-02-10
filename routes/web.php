@@ -28,6 +28,8 @@ Route::post('/register', 'RegisterController@store');
 Route::get('/login', 'LoginController@index');
 Route::post('/login', 'LoginController@store');
 
+// Logout
+Route::post('/logout', 'LogoutController@index');
 
 
 // View posts
