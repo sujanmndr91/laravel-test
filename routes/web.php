@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('posts.create');
+    return view('index');
 });
 
 // Registration
@@ -32,6 +32,7 @@ Route::post('/login', 'LoginController@store');
 Route::post('/logout', 'LogoutController@index');
 
 
-// View posts
+// Posts
 Route::get('/posts', 'PostController@index');
 Route::post('/post', 'PostController@store');
+Route::get('/posts/create', 'PostController@create');

@@ -4,19 +4,23 @@
 
 
 <!-- New Post Form -->
-    <form action="/post" method="POST" class="form-horizontal">
-        {{ csrf_field() }}
+<div class="container">
+    <div class="justify-content-center">
+        <form action="/post" method="POST" class="form-horizontal">
+            {{ csrf_field() }}
 
             <!-- Post Title -->
             <div class="form-group">
                 <label for="post-title" class="col-sm-3 control-label">Enter Post Title</label>
-
                 <div class="col-sm-6">
                     <input type="text" name="title" id="post-title" class="form-control">
-                </div>
-                @error('title')
-
+                    @error('title')
+                    <div class="text-danger">
+                        {{$message}}
+                    </div> 
                 @enderror
+                </div>
+               
             </div>
 
             <!-- Post Body -->
@@ -27,8 +31,10 @@
                     <textarea type="text" name="body" id="post-body" class="form-control">
                     </textarea>
                     @error('body')
-
-                @enderror
+                        <div class="text-danger">
+                            {{$message}}
+                        </div>       
+                    @enderror
                 </div>
             </div>
 
@@ -40,5 +46,9 @@
                     </button>
                 </div>
             </div>
-    </form>
+        </form>
+
+    </div>
+</div>
+
 @endsection
