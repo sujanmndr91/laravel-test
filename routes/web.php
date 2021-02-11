@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('auth.login');
 });
 
 // Registration
@@ -35,4 +35,8 @@ Route::post('/logout', 'LogoutController@index');
 // Posts
 Route::get('/posts', 'PostController@index');
 Route::post('/post', 'PostController@store');
-Route::get('/posts/create', 'PostController@create');
+Route::get('/posts/create', 'PostController@create')->name('create');
+Route::delete('/posts/{post}', 'PostController@destroy');
+// Posts Edit
+Route::get('/posts/{id}', 'PostController@edit');
+Route::put('/posts/{id}', 'PostController@update');

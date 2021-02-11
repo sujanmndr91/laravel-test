@@ -6,14 +6,16 @@
 <!-- New Post Form -->
 <div class="container">
     <div class="justify-content-center">
-        <form action="/post" method="POST" class="form-horizontal">
+        <form action="/posts/{{$posts->id}}" method="POST" class="form-horizontal">
             {{ csrf_field() }}
+
+            @method('PUT')
 
             <!-- Post Title -->
             <div class="form-group">
                 <label for="post-title" class="col-sm-3 control-label">Enter Post Title</label>
                 <div class="col-sm-6">
-                    <input type="text" name="title" id="post-title" class="form-control">
+                    <input type="text" name="title" id="post-title" class="form-control" value="{{ $posts->title }}">
                     @error('title')
                     <div class="text-danger">
                         {{$message}}
@@ -25,10 +27,11 @@
 
             <!-- Post Body -->
             <div class="form-group">
-                <label for="post-body" class="col-sm-3 control-label">Enter Post Title</label>
 
                 <div class="col-sm-6">
-                    <textarea type="text" name="body" id="post-body" class="form-control"></textarea>
+                    <textarea type="text" name="body" id="post-body" class="form-control">
+                    {{ $posts->body }}
+                    </textarea>
                     @error('body')
                         <div class="text-danger">
                             {{$message}}
@@ -41,7 +44,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">
                     <button type="submit" class="btn btn-default">
-                        <i class="fa fa-plus"></i> Post
+                        <i class="fa fa-plus"></i> Update
                     </button>
                 </div>
             </div>
