@@ -18,7 +18,7 @@
 
             {{ method_field('DELETE') }}
             <button type="submit"> Delete </button>
-        <a href="/posts/{{ $post->id }}">Edit</a>
+        <a href="/posts/update/{{ $post->id }}">Edit</a>
 
         </form>
 

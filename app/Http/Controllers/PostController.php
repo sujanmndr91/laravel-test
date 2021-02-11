@@ -44,7 +44,8 @@ class PostController extends Controller
     }
 
     // Delete data
-    public function destroy(Post $post){
+    public function destroy($id){
+        $post = Post::find($id);
         $post->delete();
         return redirect('/userposts');
     }
@@ -74,7 +75,8 @@ class PostController extends Controller
 
     }
 
-    public function show(Post $post){
-        return view('posts.main', ['posts'=> $post]);
+    public function show($post){
+        $getpost = Post::with('comments')->where('id', $post)->first();
+        return view('posts.main', ['posts'=> $getpost]);
     }
 }

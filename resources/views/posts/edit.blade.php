@@ -6,7 +6,7 @@
 <!-- New Post Form -->
 <div class="container">
     <div class="justify-content-center">
-        <form action="/posts/{{$posts->id}}" method="POST" class="form-horizontal">
+        <form action="/posts/update/{{$posts->id}}" method="POST" class="form-horizontal">
             {{ csrf_field() }}
 
             @method('PUT')
