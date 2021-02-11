@@ -28,7 +28,7 @@ class RegisterController extends Controller
 
         auth()->attempt($request->only('email', 'password'));
 
-        return redirect('/posts');
+        return redirect('/userposts');
     }
 
     

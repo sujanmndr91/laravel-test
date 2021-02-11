@@ -41,7 +41,7 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @auth
-                        <h6>Welcome {{ auth()->user()->name }}</h6>
+                        <a href="/userposts">Welcome {{ auth()->user()->name }}</a>
                         <form action="/logout" method="post" class="">
                             {{ @csrf_field() }}
                             <button type="submit">Logout</button>

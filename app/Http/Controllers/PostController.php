@@ -35,7 +35,7 @@ class PostController extends Controller
         else{
             return redirect('/login');
         }
-        return redirect('/posts');
+        return redirect('/userposts');
     }
 
     // Posts creating page redirect 
@@ -46,7 +46,7 @@ class PostController extends Controller
     // Delete data
     public function destroy(Post $post){
         $post->delete();
-        return redirect('/posts');
+        return redirect('/userposts');
     }
 
     // Show data for editing
@@ -70,7 +70,11 @@ class PostController extends Controller
             'body' => $input['body']
         ]);
      
-        return redirect('/posts');
+        return redirect('/userposts');
 
+    }
+
+    public function show(Post $post){
+        return view('posts.main', ['posts'=> $post]);
     }
 }

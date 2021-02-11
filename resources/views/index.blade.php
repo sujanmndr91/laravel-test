@@ -11,6 +11,7 @@
         <h2>{{ $post->title }}</h2>
         <p>{{ $post->body }}</p>
         <p>Posted By <a href="">{{$post->user->name}}</p></a></p>
+        <a href="/posts/{{$post->id}}">Read More</a>
 
         @endforeach
     </div>

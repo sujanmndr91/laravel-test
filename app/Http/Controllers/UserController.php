@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    //
+    
     public function show(){
         $posts = Post::get(); // Get all posts and assign to $posts
 

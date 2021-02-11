@@ -37,8 +37,11 @@ Route::get('/posts', 'PostController@index');
 Route::post('/post', 'PostController@store');
 Route::get('/posts/create', 'PostController@create')->name('create');
 Route::delete('/posts/{post}', 'PostController@destroy');
+// Post for main post to display
+Route::get('/posts/{post}', 'PostController@show');
+
 // Posts Edit
 Route::get('/posts/{id}', 'PostController@edit');
 Route::put('/posts/{id}', 'PostController@update');
 
-Route::get('/posts/users', 'UserController@show');
+Route::get('/userposts', 'UserController@show');
