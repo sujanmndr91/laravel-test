@@ -25,7 +25,7 @@ Route::get('/register', 'RegisterController@index');
 Route::post('/register', 'RegisterController@store');
 
 // Login
-Route::get('/login', 'LoginController@index');
+Route::get('/login', 'LoginController@index')->name('login');
 Route::post('/login', 'LoginController@store');
 
 // Logout
@@ -45,3 +45,9 @@ Route::get('/posts/{id}', 'PostController@edit');
 Route::put('/posts/{id}', 'PostController@update');
 
 Route::get('/userposts', 'UserController@show');
+Route::get('/userposts', 'UserController@show')->middleware('auth');
+
+// Comments
+Route::get('/comments', 'CommentController@index');
+Route::post('/comments', 'CommentController@store');
+

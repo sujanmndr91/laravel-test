@@ -3,12 +3,7 @@
 @section('content')
 <div class="container">
       <div class="justify-content-center">
-      @if (session('status'))
-      <div class="text-red">
-            {{ session('status') }}
-      </div>
-      @endif
-
+     
 
 <form method="POST" action="/login" class="form-control">
      {{ @csrf_field() }}    
