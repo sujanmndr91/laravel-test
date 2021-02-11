@@ -36,7 +36,11 @@
                 </div>
             </div>
         </form>
-
+        <div>
+        </div>
+        @foreach($posts->comments as $comment)
+            {{$comment->comment}}
+        @endforeach
         <div>
         </div>
 
