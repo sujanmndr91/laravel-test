@@ -40,3 +40,5 @@ Route::delete('/posts/{post}', 'PostController@destroy');
 // Posts Edit
 Route::get('/posts/{id}', 'PostController@edit');
 Route::put('/posts/{id}', 'PostController@update');
+
+Route::get('/posts/users', 'UserController@show');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,7 +11,8 @@ class PostController extends Controller
 {
     //
     public function index(){
-        $posts = Post::get();
+        // with can be used to define and get more value of the relationship
+        $posts = Post::with('user')->get();
         
         return view('index', compact('posts'));
     }
