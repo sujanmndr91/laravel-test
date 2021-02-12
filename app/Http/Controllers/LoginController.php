@@ -13,6 +13,8 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
+
+
     // Login Validation
     public function store(Request $request){
         $this->validate($request, [
@@ -26,4 +28,5 @@ class LoginController extends Controller
 
         return redirect('/userposts');
     }
+   
 }

@@ -5,8 +5,6 @@
 
     <div class="panel-body justify-content-center">
 
-
-
         <h2>{{ $posts->title }}</h2>
         <p>{{ $posts->body }}</p>
 
@@ -38,11 +36,17 @@
             </div>
         </form>
         @endauth
-    
+
+        @guest
+        <div>
+            <h6><a href="/login">Please Login to make a comment</a></h6>
+        </div>
+        @endguest
+
         @foreach($posts->comments as $comment)
             <div class="panel-body">
-            <div>{{$comment->comment}}</div>
-            <div>Commented By {{$comment->user->name}}</div>
+            <h5 class="mb-2">{{$comment->comment}}</h5>
+            <div class="mb-3">Commented By {{$comment->user->name}} {{$comment->created_at->diffForHumans()}}</div>
             </div>
         @endforeach
       

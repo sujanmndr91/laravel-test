@@ -12,4 +12,5 @@ class LogoutController extends Controller
 
         return view('auth.login');
     }
+    
 }

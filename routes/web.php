@@ -28,6 +28,7 @@ Route::post('/register', 'RegisterController@store');
 Route::get('/login', 'LoginController@index')->name('login');
 Route::post('/login', 'LoginController@store');
 
+
 // Logout
 Route::post('/logout', 'LogoutController@index');
 

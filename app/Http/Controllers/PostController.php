@@ -12,8 +12,10 @@ class PostController extends Controller
     //
     public function index(){
         // with can be used to define and get more value of the relationship
-        $posts = Post::with('user')->get();
+        // $posts = Post::with('user')->get();
         
+        $posts = Post::with('user')->paginate(5);
+
         return view('index', compact('posts'));
     }
 
