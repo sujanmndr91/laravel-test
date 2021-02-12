@@ -22,7 +22,8 @@ class CommentController extends Controller
         $input = $request->all();
         Comments::create([
             'comment' => $input['comment'],
-            'post_id' => $id
+            'post_id' => $id,
+            'user_id' => auth()->id()
         ]);
 
         

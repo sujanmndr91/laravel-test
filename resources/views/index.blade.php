@@ -10,7 +10,7 @@
 
         <h2>{{ $post->title }}</h2>
         <p>{{ $post->body }}</p>
-        <p>Posted By <a href="">{{$post->user->name}}</p></a></p>
+        <p>Posted By {{$post->user->name}}</p>
         <a href="/posts/{{$post->id}}">Read More</a>
         <p>Post Created at {{$post->created_at->diffForHumans()}}</p>
 

@@ -41,7 +41,8 @@
     
         @foreach($posts->comments as $comment)
             <div class="panel-body">
-            {{$comment->comment}}
+            <div>{{$comment->comment}}</div>
+            <div>Commented By {{$comment->user->name}}</div>
             </div>
         @endforeach
       
