@@ -10,10 +10,11 @@
         <h2>{{ $posts->title }}</h2>
         <p>{{ $posts->body }}</p>
 
-        <form action="/comments" method="POST" class="form-horizontal">
+        <form action="/comments/store/{{ $posts->id}}" method="POST" class="form-horizontal">
             {{ csrf_field() }}
 
             @method('POST')
+            @auth
             <!-- Comment Body -->
             <div class="form-group">
 
@@ -36,15 +37,14 @@
                 </div>
             </div>
         </form>
-        <div>
-        </div>
+        @endauth
+    
         @foreach($posts->comments as $comment)
+            <div class="panel-body">
             {{$comment->comment}}
+            </div>
         @endforeach
-        <div>
-        </div>
-
-
+      
     </div>
 </div>
 @endsection

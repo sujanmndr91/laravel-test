@@ -49,5 +49,5 @@ Route::get('/userposts', 'UserController@show')->middleware('auth');
 
 // Comments
 Route::get('/comments', 'CommentController@index');
-Route::post('/comments', 'CommentController@store');
+Route::post('/comments/store/{id}', 'CommentController@store');
 
