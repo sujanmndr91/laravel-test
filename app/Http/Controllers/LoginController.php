@@ -9,7 +9,7 @@ class LoginController extends Controller
 {
    
     //
-    public function index(){
+    public function index(Request $request){
         return view('auth.login');
     }
 
@@ -17,6 +17,7 @@ class LoginController extends Controller
 
     // Login Validation
     public function store(Request $request){
+       return $redirect = $request->redirect ?? 'Chaina';
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',

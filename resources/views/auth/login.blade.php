@@ -5,8 +5,9 @@
       <div class="justify-content-center">
      
 
-<form method="POST" action="/login" class="form-control">
+<form method="POST" action="/login" class="form-control p-3">
      {{ @csrf_field() }}    
+     <input type="hidden" value="" name="">
 
      <div class="form-group">
      <input type="text" id="email" class="" name="email" placeholder="Email" value={{ old('email') }}>

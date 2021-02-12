@@ -10944,3 +10944,6 @@ a.text-dark:focus {
   }
 }
 
+.form-control{
+  height: auto;
+}

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
       <div class="justify-content-center">
-      <form method="POST" action="/register" class="form-control">
+      <form method="POST" action="/register" class="form-control p-3">
      {{ @csrf_field() }}
 
      <div class="form-group">

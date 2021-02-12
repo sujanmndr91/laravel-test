@@ -9,7 +9,7 @@
 
         @foreach ($posts as $post)
 
-        <h2>{{ $post->title }}</h2>
+        <h2 class="mt-3">{{ $post->title }}</h2>
         <p>{{ $post->body }}</p>
 
         <!-- TODO: Delete Button -->
@@ -17,8 +17,9 @@
             {{ csrf_field() }}
 
             {{ method_field('DELETE') }}
+            <a href="/posts/update/{{ $post->id }}" class="mr-2">Edit</a>
+
             <button type="submit"> Delete </button>
-        <a href="/posts/update/{{ $post->id }}">Edit</a>
 
         </form>
 

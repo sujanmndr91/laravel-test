@@ -39,14 +39,14 @@
 
         @guest
         <div>
-            <h6><a href="/login">Please Login to make a comment</a></h6>
+            <h6><a href="/login?redirect=/posts/{{$posts->id}}">Please Login to make a comment</a></h6>
         </div>
         @endguest
 
         @foreach($posts->comments as $comment)
-            <div class="panel-body">
-            <h5 class="mb-2">{{$comment->comment}}</h5>
-            <div class="mb-3">Commented By {{$comment->user->name}} {{$comment->created_at->diffForHumans()}}</div>
+            <div class="form-control mb-3">
+            <h5 class="">{{$comment->comment}}</h5>
+            <div class="">Commented By {{$comment->user->name}}, {{$comment->created_at->diffForHumans()}}</div>
             </div>
         @endforeach
       

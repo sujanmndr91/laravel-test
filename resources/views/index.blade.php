@@ -18,7 +18,7 @@
                 <a href="/posts/{{$post->id}}">Read More</a>
 
                 <p class="post-meta mb-5">Posted by
-                    {{$post->user->name}}
+                    {{$post->user->name}}, 
                     {{$post->created_at->diffForHumans()}}
                 </p>
                 @endforeach
