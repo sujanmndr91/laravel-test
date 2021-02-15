@@ -3,35 +3,40 @@
 @section('content')
 <div class="container">
       <div class="justify-content-center">
-     
+            @if (session('status'))
+            <div class="">
+                  {{ session('status') }}
+            </div>
+            @endif
 
-<form method="POST" action="/login" class="form-control p-3">
-     {{ @csrf_field() }}    
-     <input type="hidden" value="" name="">
 
-     <div class="form-group">
-     <input type="text" id="email" class="" name="email" placeholder="Email" value={{ old('email') }}>
-           <div lass="text-red">
-           @error('email')
-                 <div class="text-red">
-                 {{ $message }}
-                 </div>
-           @enderror
-           </div>
-     </div>
+            <form method="POST" action="/login" class="form-control p-3">
+                  {{ @csrf_field() }}
+                  <input type="hidden" value={{ app('request')->input('redirect') }} name="redirect">
 
-     <div class="form-group">
-     <input type="password" id="password" class="" name="password" placeholder="Password">
-           @error('password')
-           <div class="text-red">
-           {{ $message }}
-           </div>
-           @enderror
-     </div>
+                  <div class="form-group">
+                        <input type="text" id="email" class="" name="email" placeholder="Email" value={{ old('email') }}>
+                        <div lass="text-red">
+                              @error('email')
+                              <div class="text-red">
+                                    {{ $message }}
+                              </div>
+                              @enderror
+                        </div>
+                  </div>
 
-     <input type="submit" class="" value="Login">
-</form>
-      
+                  <div class="form-group">
+                        <input type="password" id="password" class="" name="password" placeholder="Password">
+                        @error('password')
+                        <div class="text-red">
+                              {{ $message }}
+                        </div>
+                        @enderror
+                  </div>
+
+                  <input type="submit" class="" value="Login">
+            </form>
+
       </div>
 </div>
 

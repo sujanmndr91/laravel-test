@@ -17,7 +17,7 @@ class LoginController extends Controller
 
     // Login Validation
     public function store(Request $request){
-       return $redirect = $request->redirect ?? 'Chaina';
+    
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
@@ -27,7 +27,13 @@ class LoginController extends Controller
             return back()->with('status', 'Invalid login details');
         }
 
-        return redirect('/userposts');
+        if ($request->redirect) {
+            // return  $request->redirect;
+            return redirect($request->redirect);
+        }
+        else{
+            return redirect('/userposts');
+        }
     }
    
 }
