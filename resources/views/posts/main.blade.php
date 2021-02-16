@@ -7,6 +7,7 @@
 
         <h2>{{ $posts->title }}</h2>
         <p>{{ $posts->body }}</p>
+        <p>{{ $posts->user->name }}</p>
 
         <form action="/comments/store/{{ $posts->id}}" method="POST" class="form-horizontal">
             {{ csrf_field() }}
