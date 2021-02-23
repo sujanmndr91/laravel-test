@@ -52,3 +52,6 @@ Route::get('/userposts', 'UserController@show')->middleware('auth');
 Route::get('/comments', 'CommentController@index');
 Route::post('/comments/store/{id}', 'CommentController@store');
 
+// Excel export
+Route::get('/exportUser', 'ExportController@exportUser')->name('exportUser');
+Route::get('/exportPost', 'ExportController@exportPost')->name('exportPost');
