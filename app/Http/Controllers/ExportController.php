@@ -11,9 +11,9 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class ExportController extends Controller
 {
-    public function exportUser() 
+    public function exportUser(Request $request) 
     {
-        return Excel::download(new UsersExport, 'users.xlsx');
+        return Excel::download(new UsersExport($request), 'users.xlsx');
     }
 
     public function exportPost() 
@@ -21,13 +21,13 @@ class ExportController extends Controller
         return Excel::download(new PostsExport, 'posts.xlsx');
     }
 
-    public function exportComment()
+    public function exportComment(Request $request)
     {
-    	return Excel::download(new CommentsExport, 'comments.xlsx');
+    	return Excel::download(new CommentsExport($request), 'comments.xlsx');
     }
 
     public function exportPostComment(Request $request){
-    	return Excel::download(new CommentsExport($request->id), 'comments.xlsx');
+    	return Excel::download(new CommentsExport($request), 'comments.xlsx');
     }
     
 }

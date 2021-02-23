@@ -5,7 +5,7 @@
 
     <div class="panel-body justify-content-center">
 
-         <a class="btn btn-warning" href="/exportComment/{{ $posts->id }}">Export Comments Data</a>
+         <a class="btn btn-warning mb-3" href="/exportComment?post_id=6&user_id=1">Export Comments Data</a>
 
 
         <h2>{{ $posts->title }}</h2>
@@ -40,6 +40,33 @@
             </div>
         </form>
         @endauth
+
+        <form action="/exportComment" method="POST" class="form-horizontal">
+            {{ csrf_field() }}
+
+            @method('POST')
+          
+            <!-- Comment Body -->
+            <div class="form-group">
+
+                <div class="col-sm-6">
+                     <input type="text" id="post_id" class="" name="post_id" placeholder="Post Id" value="">
+
+                     <input type="text" id="user_id" class="" name="user_id" placeholder="User Id" value="">
+
+                    
+                </div>
+            </div>
+
+            <!-- Add Reply Button -->
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <button type="submit" class="btn btn-default">
+                        <i class="fa fa-plus"></i> Excel Export
+                    </button>
+                </div>
+            </div>
+        </form>
 
         @guest
         <div>
