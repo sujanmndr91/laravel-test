@@ -55,3 +55,7 @@ Route::post('/comments/store/{id}', 'CommentController@store');
 // Excel export
 Route::get('/exportUser', 'ExportController@exportUser')->name('exportUser');
 Route::get('/exportPost', 'ExportController@exportPost')->name('exportPost');
+Route::get('/exportComment', 'ExportController@exportComment')->name('exportComment');
+Route::get('/exportComment/{id}', 'ExportController@exportPostComment');
+
+

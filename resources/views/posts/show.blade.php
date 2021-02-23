@@ -11,6 +11,7 @@
          <a class="btn btn-warning" href="{{ route('exportPost') }}">Export Post Data</a>
 
 
+
         @foreach ($posts as $post)
 
         <h2 class="mt-3">{{ $post->title }}</h2>

@@ -5,6 +5,9 @@
 
     <div class="panel-body justify-content-center">
 
+         <a class="btn btn-warning" href="/exportComment/{{ $posts->id }}">Export Comments Data</a>
+
+
         <h2>{{ $posts->title }}</h2>
         <p>{{ $posts->body }}</p>
         <p>{{ $posts->user->name }}</p>
